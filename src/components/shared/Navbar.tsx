@@ -15,10 +15,8 @@ export default function Navbar() {
         <header className="max-w-7xl mx-auto sticky top-1 z-50 px-2">
             <div className="flex h-16 justify-between items-center w-full">
                 {/* Logo */}
-                <div className="flex flex-row gap-2 items-center">
-                    <Logo />
-                    <h2 className="text-2xl font-bold">Fresh Harvests</h2>
-                </div>
+                <Logo />
+                
                 {/* Desktop Menu */}
                 <div className="hidden md:flex space-x-8 text-gray-700 font-medium">
                     {navLinks?.map((data) => {
