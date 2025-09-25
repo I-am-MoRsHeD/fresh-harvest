@@ -10,8 +10,11 @@ const Button = ({
     onClick,
     bg
 }: IButton) => {
-    const baseStyle =
-        "rounded-lg text-white px-4 py-2 w-full flex items-center justify-center transition hover:opacity-90";
+    const hasTextColor = className?.includes("text-");
+    const baseStyle = `
+  ${!hasTextColor ? "text-white" : ""}
+  rounded-lg px-4 py-2 w-full flex items-center justify-center transition hover:opacity-90
+`;
     const bgStyle = { backgroundColor: bg || "#FF6A1A" };
     const combinedClasses = `${baseStyle} ${className}`.trim();
 
