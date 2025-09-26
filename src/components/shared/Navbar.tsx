@@ -12,11 +12,11 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <header className="max-w-7xl mx-auto sticky top-1 z-50 px-2">
-            <div className="flex h-16 justify-between items-center w-full">
+        <header className="fixed top-0 left-0 w-full bg-white/50 z-50">
+            <div className="max-w-7xl mx-auto px-2 flex h-16 justify-between items-center">
                 {/* Logo */}
                 <Logo />
-                
+
                 {/* Desktop Menu */}
                 <div className="hidden md:flex space-x-8 text-gray-700 font-medium">
                     {navLinks?.map((data) => {
@@ -68,14 +68,7 @@ export default function Navbar() {
 
             {/* Mobile Menu */}
             {isOpen && (
-                <nav
-                    className="
-      fixed top-14 left-0 w-full
-      bg-white shadow-md px-6 py-4 space-y-4 text-gray-700 font-medium
-      z-50
-      animate-slideDown
-    "
-                >
+                <nav className="fixed top-16 left-0 w-full bg-white shadow-md px-6 py-4 space-y-4 text-gray-700 font-medium z-50 animate-slideDown">
                     <div className="flex flex-col gap-2">
                         {navLinks?.map((data) => (
                             <Link key={data.id} href={data.href}>
@@ -83,7 +76,7 @@ export default function Navbar() {
                             </Link>
                         ))}
                     </div>
-                    <Button bg="#FFF" className="w-10 border-[2px] border-black text-gray-700">
+                    <Button className="w-10 border-[2px] border-black text-gray-700">
                         Sign In
                     </Button>
                 </nav>
